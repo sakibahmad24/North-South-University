@@ -49,6 +49,7 @@ public class GenericStackTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+	
 	}
 
 	@Test
@@ -60,5 +61,20 @@ public class GenericStackTest {
 		assertEquals(output, null); //expecting null when stack is empty
 		
 	}
+	
+	@Test
+	public void testIsEmptyOnEmptyStack() {
+		boolean output = genericStack.isEmpty(); //returning value whether the stack is empty or not
+		
+		assertEquals(output, true); //expecting true when stack is empty
+	}
+	
+	@Test
+	public void testIsEmptyOnNonEmptyStack() {
+		boolean output = genericStack.isEmpty(); //returning value whether the stack is empty or not
+		
+		assertEquals(output, false); //expecting true when stack is empty
+	}
+	
 
 }
