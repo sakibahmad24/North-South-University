@@ -189,6 +189,74 @@ public class GenericStackTest<Object> {
 		
 	}
 	
+	/*following testcases are for
+	 * input space partition test
+	 * for single character
+	 */
+	@Test
+	public void testFailForSingleChar() {
+		genericStack.push('a');
+		genericStack.push('b');
+		genericStack.push('c');
+		
+		assertEquals('d', genericStack.topItem()); //this test will fail
+	}
+	
+	@Test
+	public void testPassForSingleChar() {
+		genericStack.push('a');
+		genericStack.push('b');
+		genericStack.push('c');
+		
+		assertEquals('c', genericStack.topItem()); //this test will pass
+	}
+	
+	/* input space partition testcase for string variables */
+	
+	@Test
+	public void testForStrings() {
+		genericStack.push("Dabbe");
+		genericStack.push("Siccin");
+		genericStack.push("Anabelle");
+		
+		genericStack.pop();
+		
+		assertEquals("Siccin", genericStack.topItem());
+	}
+	
+	/*
+	 * input space partition testcase for positive integers
+	 */
+	
+	@Test
+	public void testForpositiveInteger() {
+		genericStack.push(10);
+		genericStack.push(100006);
+		genericStack.push(12);
+		
+		assertEquals(12, genericStack.topItem());
+	}
+	
+	/*
+	 * input space testcase for negative integers
+	 */
+	
+	@Test
+	public void testForNegativeInteger() {
+		genericStack.push(-152);
+		genericStack.push(-65);
+		
+		assertEquals(-65, genericStack.topItem());
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
