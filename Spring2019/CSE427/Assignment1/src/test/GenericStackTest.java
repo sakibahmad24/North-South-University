@@ -86,6 +86,30 @@ public class GenericStackTest {
 	}
 	
 	
+	@Test
+	public void testOnStackSize1() {
+		genericStack.push("Here is a push"); //pushing a single item into stack
+		
+		int size = genericStack.size();
+		
+		assertEquals(size, 1);
+	}
+	
+//	the following method tests whether the stacksize equals 3 after pushing 3 items into the stack
+	
+	@Test
+	public void testOnStackSize3() {
+		genericStack.push("push1");
+		genericStack.push("push2");
+		genericStack.push("push3");
+		
+		int size = genericStack.size();
+		assertEquals(size, 3); //expecting 3 as 3 items have been pushed
+	}
+	
+	
+	
+	
 	
 
 }

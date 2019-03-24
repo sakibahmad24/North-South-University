@@ -8,9 +8,11 @@ public class GenericStack <T> {
 	
 	private int top = 0;
 	
+	//implemented this method after testing on pushing 1 and 3 elements 
 	public int size() {
 		return top;
 	}
+	
 	
 	public GenericStack() {
 		
