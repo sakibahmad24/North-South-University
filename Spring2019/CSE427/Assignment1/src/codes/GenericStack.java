@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class GenericStack <T> {
 
-	private ArrayList<T> stack = new ArrayList<T> ();
+	private ArrayList<Object> stack = new ArrayList<Object> ();
 	
 	private int top = 0;
 	
@@ -19,7 +19,7 @@ public class GenericStack <T> {
 	}
 	
 	//working method body added after testing with testOnSimplePush() method  
-	public void push(T item) {
+	public void push(Object item) {
 		
 		stack.add(top++, item);
 		
@@ -27,7 +27,7 @@ public class GenericStack <T> {
 	
 	
 	//	testcase passed after implementing the pop method
-	public T pop() {
+	public Object pop() {
 		
 		return stack.remove (--top);
 		
@@ -48,7 +48,7 @@ public class GenericStack <T> {
 	/*implemented topItem method
 	 * after testing it on various testcases
 	 */
-	public T topItem() {
+	public Object topItem() {
 		if(!this.isEmpty()) {
 			return pop();
 		}

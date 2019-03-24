@@ -20,8 +20,8 @@ import codes.GenericStack;
  * @param <T>
  *
  */
-public class GenericStackTest<T> {
-	 private GenericStack<T> genericStack;
+public class GenericStackTest<Object> {
+	 private GenericStack<Object> genericStack;
 	
 	 
 	 
@@ -58,7 +58,7 @@ public class GenericStackTest<T> {
 	@Test
 	public void testPopOnEmptyStack() {
 		
-		genericStack.push((T) "100");
+		genericStack.push(100);
 		genericStack.pop(); //popping items from empty stack
 		
 		assertEquals(genericStack.size(), 0); //expecting null when stack is empty
@@ -81,7 +81,7 @@ public class GenericStackTest<T> {
 	
 	@Test
 	public void testOnSimplePush() {
-		genericStack.push((T) "10");
+		genericStack.push(10);
 		
 		boolean output = genericStack.isEmpty(); //expecting false value on output variable
 		
@@ -91,7 +91,7 @@ public class GenericStackTest<T> {
 	
 	@Test
 	public void testOnStackSize1() {
-		genericStack.push((T) "Here is a push"); //pushing a single item into stack
+		genericStack.push("Here is a push"); //pushing a single item into stack
 		
 		int size = genericStack.size();
 		
@@ -102,9 +102,9 @@ public class GenericStackTest<T> {
 	
 	@Test
 	public void testOnStackSize3() {
-		genericStack.push((T) "push1");
-		genericStack.push((T) "push2");
-		genericStack.push((T) "push3");
+		genericStack.push("push1");
+		genericStack.push("push2");
+		genericStack.push("push3");
 		
 		int size = genericStack.size();
 		assertEquals(size, 3); //expecting 3 as 3 items have been pushed
@@ -112,8 +112,8 @@ public class GenericStackTest<T> {
 	
 	@Test
 	public void testOnPop() {
-		genericStack.push((T) "pushing for pop");
-		genericStack.push((T) "push 2 for pop");
+		genericStack.push("pushing for pop");
+		genericStack.push("push 2 for pop");
 		genericStack.pop(); //popping 1 item from the stack
 		
 		int size = genericStack.size(); //should return the stack size as 1
@@ -126,7 +126,7 @@ public class GenericStackTest<T> {
 	 * after popping the only item from the stack
 	 */
 	public void testIsEmptyAfterPopping() {
-		genericStack.push((T) "here is a puish");
+		genericStack.push("here is a push");
 		genericStack.pop();
 		
 		boolean output = genericStack.isEmpty();
@@ -140,8 +140,8 @@ public class GenericStackTest<T> {
 	 */
 	@Test
 	public void testIsEmptyAfterPoppingElements() {
-		genericStack.push((T) "Kazi");
-		genericStack.push((T) "Sakib");
+		genericStack.push("Kazi");
+		genericStack.push("Sakib");
 		
 		genericStack.pop();
 		
@@ -157,9 +157,9 @@ public class GenericStackTest<T> {
 	 */
 	@Test
 	public void testTheTopItemAfterPushing() {
-		genericStack.push((T) "1");
+		genericStack.push(1);
 		
-		assertEquals("1", genericStack.topItem());
+		assertEquals(1, genericStack.topItem());
 	}
 	
 	/*
@@ -169,12 +169,12 @@ public class GenericStackTest<T> {
 	
 	@Test
 	public void testTheTopElementAsString() {
-		genericStack.push((T) "My");
-		genericStack.push((T) "Name");
+		genericStack.push("My");
+		genericStack.push("Name");
 		
-		genericStack.push((T) "23");
+		genericStack.push(23);
 		
-		assertEquals("23", genericStack.topItem());
+		assertEquals(23, genericStack.topItem());
 		
 	}
 	
