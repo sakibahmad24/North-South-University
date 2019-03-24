@@ -76,5 +76,16 @@ public class GenericStackTest {
 		assertEquals(output, false); //expecting true when stack is empty
 	}
 	
+	@Test
+	public void testOnSimplePush() {
+		genericStack.push("10");
+		
+		boolean output = genericStack.isEmpty(); //expecting false value on output variable
+		
+		assertEquals(output, false); //comparing the output value if it is false as single push is done into the stack
+	}
+	
+	
+	
 
 }
