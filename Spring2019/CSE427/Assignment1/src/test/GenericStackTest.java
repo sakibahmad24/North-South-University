@@ -16,8 +16,8 @@ import org.junit.Test;
 import codes.GenericStack;
 
 /**
- * @author user
- * @param <T>
+ * @author sakibahmad24
+ * @param <Object>
  *
  */
 public class GenericStackTest<Object> {
@@ -238,7 +238,7 @@ public class GenericStackTest<Object> {
 	}
 	
 	/*
-	 * input space testcase for negative integers
+	 * input space partition testcase for negative integers
 	 */
 	
 	@Test
@@ -249,20 +249,52 @@ public class GenericStackTest<Object> {
 		assertEquals(-65, genericStack.topItem());
 	}
 	
+	/*
+	 * input space partition testcase for positive floats
+	 */
 	
+	@Test
+	public void testForPositiveFloats() {
+		genericStack.push(6.333);
+		genericStack.push(3.2);
+		genericStack.push(102.66);
+		
+		genericStack.pop();
+		genericStack.pop();
+		
+		assertEquals(6.333, genericStack.topItem());
+	}
 	
+	/*
+	 * input space partition testcase for negative floats
+	 */
 	
+	@Test
+	public void testForNegativeFloats() {
+		genericStack.push(-602.33);
+		genericStack.push(-10025.6);
+		
+		
+		assertEquals(-10025.6, genericStack.topItem());
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/*
+	 * input space partition testcase for mix data types
+	 */
+	@Test
+	public void testForMixDataTypes() {
+		genericStack.push("Kazi Sakib");
+		genericStack.push("Ahmad");
+		genericStack.push(23);
+		genericStack.push(-63.5);
+		genericStack.push("student");
+		
+		for(int i = 0; i<2; i++) {
+			genericStack.pop();
+		}
+		
+		assertEquals(23, genericStack.topItem());
+	}
 	
 
 }
