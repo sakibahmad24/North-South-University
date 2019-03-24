@@ -36,7 +36,7 @@ public class GenericStack <T> {
 	public boolean isEmpty(){
 		if(top==0) {
 			return true;
-			
+	
 		}
 		else {
 			return false;
