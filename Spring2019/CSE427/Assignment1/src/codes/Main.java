@@ -3,6 +3,8 @@
  */
 package codes;
 
+import sun.net.www.content.text.Generic;
+
 /**
  * @author sakibahmad24
  *
@@ -10,9 +12,10 @@ package codes;
 public class Main {
 
 	/**
+	 * @param <T>
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static <T> void main(String[] args) {
 		
 		GenericStack stack = new GenericStack();
 		
@@ -24,6 +27,8 @@ public class Main {
 		
 		System.out.println(stack.size());
 		
+		
+		System.out.println(stack.pop());
 		
 
 	}

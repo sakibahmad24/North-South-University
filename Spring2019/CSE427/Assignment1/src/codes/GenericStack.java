@@ -45,4 +45,21 @@ public class GenericStack <T> {
 	}
 	
 	
+	/*implemented topItem method
+	 * after testing it on various testcases
+	 */
+	public T topItem() {
+		if(!this.isEmpty()) {
+			return pop();
+		}
+		else {
+			return null;
+		}
+		
+	}
+	
+	
+
+	
+	
 }
