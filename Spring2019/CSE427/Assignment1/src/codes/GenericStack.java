@@ -26,9 +26,10 @@ public class GenericStack <T> {
 	}
 	
 	
+	//	testcase passed after implementing the pop method
 	public T pop() {
 		
-		return null;
+		return stack.remove (--top);
 		
 	}
 	
@@ -36,15 +37,12 @@ public class GenericStack <T> {
 	public boolean isEmpty(){
 		if(top==0) {
 			return true;
-	
 		}
 		else {
 			return false;
 		}
 	
 	}
-	
-	
 	
 	
 }

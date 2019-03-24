@@ -16,6 +16,9 @@ public class Main {
 		
 		GenericStack stack = new GenericStack();
 		
+
+		/* added 2 push below and checked the stack size for verification */ 
+		
 		stack.push(100);
 		stack.push("Sakib");
 		

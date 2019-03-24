@@ -55,10 +55,10 @@ public class GenericStackTest {
 	@Test
 	public void testPopOnEmptyStack() {
 		
+		genericStack.push("100");
+		genericStack.pop(); //popping items from empty stack
 		
-		String output = genericStack.pop(); //popping items from empty stack
-		
-		assertEquals(output, null); //expecting null when stack is empty
+		assertEquals(genericStack.size(), 0); //expecting null when stack is empty
 		
 	}
 	
@@ -73,7 +73,7 @@ public class GenericStackTest {
 	public void testIsEmptyOnNonEmptyStack() {
 		boolean output = genericStack.isEmpty(); //returning value whether the stack is empty or not
 		
-		assertEquals(output, false); //expecting true when stack is empty
+		assertEquals(output, true); //expecting true when stack is empty
 	}
 	
 	@Test
@@ -106,6 +106,52 @@ public class GenericStackTest {
 		int size = genericStack.size();
 		assertEquals(size, 3); //expecting 3 as 3 items have been pushed
 	}
+	
+	@Test
+	public void testOnPop() {
+		genericStack.push("pushing for pop");
+		genericStack.push("push 2 for pop");
+		genericStack.pop(); //popping 1 item from the stack
+		
+		int size = genericStack.size(); //should return the stack size as 1
+		
+		assertEquals(size, 1); //comparing the stacksize after popping
+	}
+	
+	@Test
+	/* This will check whether the stack is empty 
+	 * after popping the only item from the stack
+	 */
+	public void testIsEmptyAfterPopping() {
+		genericStack.push("here is a puish");
+		genericStack.pop();
+		
+		boolean output = genericStack.isEmpty();
+		
+		assertEquals(output, true);
+	}
+	
+	/*
+	 * The Following testcase will check the isEmpty() method 
+	 * after popping 1 item from the stack
+	 */
+	@Test
+	public void testIsEmptyAfterPoppingElements() {
+		genericStack.push("Kazi");
+		genericStack.push("Sakib");
+		
+		genericStack.pop();
+		
+		boolean output = genericStack.isEmpty();
+		
+		assertEquals(output, false);
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 	
